@@ -1,0 +1,82 @@
+std_output_dir: &std_output_dir ./plots
+
+std_cutset: &std_cutset >
+  (preSkimBToKEE_fit_mass>4.5) &
+  (preSkimBToKEE_fit_mass < 5.5)
+
+plots:
+  jpsi_bmass_comparison:
+    inputs:
+      - /eos/cms/store/group/phys_bphys/DiElectronX/File_location_20_11_24/CMGtoolsFiles/jpsi/Bu_kaon_jpsi_resonant.root
+    tree: Events
+    output_dir: *std_output_dir
+    filename: jpsi_bmass_comparison
+    branches:
+      - recoB_fit_mass
+      - preSkimBToKEE_fit_mass
+    bins: [5, 5.5, 30]
+    cuts: None
+    norm: True
+    yscale: log
+    ylabel: nEvents [A.U.]
+    xlabel: "$m_{\\text{B Candidate}}$ [GeV]"
+    legend:
+      - Fitted Mass
+      - Raw Mass
+
+  jpsi_llmass_comparison:
+    inputs:
+      - /eos/cms/store/group/phys_bphys/DiElectronX/File_location_20_11_24/CMGtoolsFiles/jpsi/Bu_kaon_jpsi_resonant.root
+    tree: Events
+    output_dir: *std_output_dir
+    filename: jpsi_llmass_comparison
+    branches:
+      - recoB_mll_fullfit
+      - preSkimBToKEE_mll_fullfit
+    bins: [2.5, 3.5, 30]
+    cuts: None
+    norm: True
+    yscale: log
+    ylabel: nEvents [A.U.]
+    xlabel: "$m_{e^{+}e^{-}}$ [GeV]"
+    legend:
+      - Fitted Mass
+      - Raw Mass
+
+  psi2s_bmass_comparison:
+    inputs:
+      - /eos/cms/store/group/phys_bphys/DiElectronX/File_location_20_11_24/CMGtoolsFiles/psi2s/Bu_kaon_psi2s_resonant.root
+    tree: Events
+    output_dir: *std_output_dir
+    filename: psi2s_bmass_comparison
+    branches:
+      - recoB_fit_mass
+      - preSkimBToKEE_fit_mass
+    bins: [5, 5.5, 30]
+    cuts: None
+    norm: True
+    yscale: log
+    ylabel: nEvents [A.U.]
+    xlabel: "$m_{\\text{B Candidate}}$ [GeV]"
+    legend:
+      - Fitted Mass
+      - Raw Mass
+
+  psi2s_llmass_comparison:
+    inputs:
+      - /eos/cms/store/group/phys_bphys/DiElectronX/File_location_20_11_24/CMGtoolsFiles/psi2s/Bu_kaon_psi2s_resonant.root
+    tree: Events
+    output_dir: *std_output_dir
+    filename: psi2s_llmass_comparison
+    branches:
+      - recoB_mll_fullfit
+      - preSkimBToKEE_mll_fullfit
+    bins: [3., 4.2, 30]
+    cuts: None
+    norm: True
+    yscale: log
+    ylabel: nEvents [A.U.]
+    xlabel: "$m_{e^{+}e^{-}}$ [GeV]"
+    legend:
+      - Fitted Mass
+      - Raw Mass

@@ -1,0 +1,15 @@
+name: r3k_bdttools
+channels:
+  - conda-forge
+dependencies:
+  - awkward
+  - matplotlib
+  - mplhep
+  - numpy
+  - python=3.10
+  - pyyaml
+  - root
+  - uproot
+  - ca-certificates
+  - certifi
+  - openssl
