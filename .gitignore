@@ -1,6 +1,6 @@
 
 plots/
-
+.history/
 /**/*.pdf
 /**/*.png
 /**/*.jpg
